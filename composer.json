@@ -31,8 +31,8 @@
     ],
     "repositories": [
         {
-            "type": "path",
-            "url": "./"
+            "type": "vcs",
+            "url": "https://github.com/alexdbsas/fffeather"
         }
     ],
     "require": {
