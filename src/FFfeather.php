@@ -1,7 +1,8 @@
 <?php
 
 /**
-    @version 1.0
+    @license MIT
+    @version 1.0.2
  **/
 
 
@@ -14,10 +15,16 @@ class FFfeather
     private string $base;
     private string $sprite = 'feather-icon.svg';
     private string $src = 'https://unpkg.com/feather-icons/dist/feather-sprite.svg';
+    private string $path;
 
     public function __construct()
     {
         $this->base = __DIR__;
+        $this->path = implode(DIRECTORY_SEPARATOR, [$this->base, $this->sprite]);
+        if (!file_exists($this->path)) {
+            $content = file_get_contents($this->src);
+            file_put_contents($this->path, $content);
+        }
         $this->f3 = \Base::instance();
         $this->tpl = \Template::instance();
         $this->tpl->extend('feather', [$this, 'renderTag']);
@@ -26,16 +33,9 @@ class FFfeather
 
     public function getSprite()
     {
-        $path = implode(DIRECTORY_SEPARATOR, [$this->base, $this->sprite]);
-        if (!file_exists($path)) {
-            $content = file_get_contents($this->src);
-            file_put_contents($path, $content);
-        } else {
-            $content = file_get_contents($path);
-        }
         $this->f3->status(200);
         header('Content-type: application/xml');
-        echo ($content);
+        echo (file_get_contents($this->path));
     }
 
     public function renderTag($args)

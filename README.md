@@ -3,6 +3,14 @@ Extension for Fat-free-framework with [feather-icons](https://feathericons.com/)
 
 # Usage
 Really easy:
+
+index.php:
+````PHP
+require 'vendor/autoload.php';
+new \alexdbsas\FFfeather;
+````
+
+template.html:
 ````HTML
 <feather type="activity">
 ````
