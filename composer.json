@@ -1,0 +1,46 @@
+{
+    "name": "alexdbsas/fffeather",
+    "description": "simple feather icons integration",
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "type": "fatfree-extension",
+    "homepage": "https://github.com/alexdbsas/fffeather",
+    "readme": "README.md",
+    "authors": [
+        {
+            "name": "Alex Dubrovin",
+            "homepage": "https://github.com/alexdbsas",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "chat": "https://t.me/botmaker_ar"
+    },
+    "funding": [
+        {
+            "type": "buymeacoffe",
+            "url": "https://www.buymeacoffee.com/codemake"
+        }
+    ],
+    "keywords": [
+        "F3",
+        "fatfree",
+        "template",
+        "feather",
+        "icons"
+    ],
+    "repositories": [
+        {
+            "type": "path",
+            "url": "./"
+        }
+    ],
+    "require": {
+        "bcosca/fatfree-core": "3.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "alexdbsas\\": "src/"
+        }
+    }
+}
